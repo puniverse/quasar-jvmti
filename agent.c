@@ -212,11 +212,11 @@ static void JNICALL dumpThreadInfo(jvmtiEnv* jvmti) {
                 printf("\n  at %s in class %s (%s:Native)", methodName, className, sourceFileName);
             }
 
-            if (!strcmp("main", threadInfo.name) && !strcmp("bar", methodName)) {
-                jint i;
-                err = (*jvmti)->GetOperandInt(jvmti, threadPtr[i], j, 0, &i);
+            if (!strcmp("main", threadInfo.name) && !strcmp("main", methodName)) {
+                jint l;
+                err = (*jvmti)->GetOperandInt(jvmti, threadPtr[i], j, 0, &l);
                 CHECK_JVMTI_ERROR(jvmti, err);
-                printf(" i: %d\n", i);
+                printf("\n\n=== int in \"main\"'s operand stack at slot 0 is: %d ===\n", l);
             }
 
             // Release memory

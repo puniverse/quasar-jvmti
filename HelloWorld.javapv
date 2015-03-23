@@ -1,6 +1,6 @@
 Classfile /Users/fabio/Src/github/pron/JVMTI_1/HelloWorld.class
   Last modified Mar 23, 2015; size 553 bytes
-  MD5 checksum 77fd162a79f51101f764af2a7ee7896d
+  MD5 checksum 6bc5f8f70005544f1798639f60ea7714
   Compiled from "HelloWorld.java"
 public class HelloWorld
   minor version: 0
@@ -85,9 +85,9 @@ Constant pool:
     flags: ACC_PUBLIC, ACC_STATIC
     Code:
       stack=2, locals=3, args_size=1
-         0: iconst_0
+         0: iconst_3
          1: istore_1
-         2: iconst_1
+         2: iconst_4
          3: istore_2
          4: iload_1
          5: iload_2

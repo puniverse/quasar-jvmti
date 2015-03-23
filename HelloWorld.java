@@ -33,8 +33,8 @@ public class HelloWorld {
         Thread.sleep(10000);
         System.out.println("...Slept! Hello, World!");
 */
-      int i1 = 0;
-      int i2 = 1;
+      int i1 = 3;
+      int i2 = 4;
       foo(i1, bar(i2));
     }
 }
