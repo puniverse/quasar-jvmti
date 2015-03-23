@@ -47,6 +47,7 @@ Agent_OnLoad(JavaVM *vm, char *options, void *reserved) {
     (void) memset(&capabilities, 0, sizeof (jvmtiCapabilities));
     capabilities.can_get_source_file_name = 1;
     capabilities.can_get_line_numbers = 1;
+    capabilities.can_access_local_variables = 1;
     err = (*jvmti)->AddCapabilities(jvmti, &capabilities);
     CHECK_JVMTI_ERROR(jvmti, err);
 
@@ -144,7 +145,24 @@ static void JNICALL dumpThreadInfo(jvmtiEnv* jvmti) {
         printf("\n\n\"%s\", prio=%d, daemon=%s, state=%s\n", \
   threadInfo.name, threadInfo.priority, (threadInfo.is_daemon == 1 ? "yes" : "no"), getThreadState(jvmti, threadPtr[i], threadState));
 
-
+        /*
+        jobject o;
+        err = (*jvmti)->GetOperandObject(jvmti, *threadPtr, 1, 1, &o);
+        CHECK_JVMTI_ERROR(jvmti, err);
+        printf(" o: %p\n", o);
+        jdouble d;
+        err = (*jvmti)->GetOperandDouble(jvmti, *threadPtr, 1, 1, &d);
+        CHECK_JVMTI_ERROR(jvmti, err);
+        printf(" d: %f\n", d);
+        jfloat f;
+        err = (*jvmti)->GetOperandFloat(jvmti, *threadPtr, 1, 1, &f);
+        CHECK_JVMTI_ERROR(jvmti, err);
+        printf(" f: %f\n", f);
+        jlong l;
+        err = (*jvmti)->GetOperandLong(jvmti, *threadPtr, 1, 1, &l);
+        CHECK_JVMTI_ERROR(jvmti, err);
+        printf(" l: %d\n", l);
+        */
         //
         // Get / Display the Thread's "stack trace" information
         //
@@ -165,9 +183,10 @@ static void JNICALL dumpThreadInfo(jvmtiEnv* jvmti) {
             jboolean isNative;
             jvmtiLineNumberEntry* lineNumTbl;
             jint lineNumTblSize;
-
+            
             err = (*jvmti)->GetMethodName(jvmti, frames[j].method, &methodName, &methodSig, NULL);
             CHECK_JVMTI_ERROR(jvmti, err);
+
             err = (*jvmti)->GetMethodDeclaringClass(jvmti, frames[j].method, &classPtr);
             CHECK_JVMTI_ERROR(jvmti, err);
             err = (*jvmti)->GetClassSignature(jvmti, classPtr, &className, NULL);
@@ -191,6 +210,13 @@ static void JNICALL dumpThreadInfo(jvmtiEnv* jvmti) {
 
             if (isNative) {
                 printf("\n  at %s in class %s (%s:Native)", methodName, className, sourceFileName);
+            }
+
+            if (!strcmp("main", threadInfo.name) && !strcmp("bar", methodName)) {
+                jint i;
+                err = (*jvmti)->GetOperandInt(jvmti, threadPtr[i], j, 0, &i);
+                CHECK_JVMTI_ERROR(jvmti, err);
+                printf(" i: %d\n", i);
             }
 
             // Release memory

@@ -65,7 +65,7 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libJVMTI_1.${CND_DLIB_EXT}: ${OBJECTF
 ${OBJECTDIR}/agent.o: agent.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -I/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/include -I/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/include/darwin -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/agent.o agent.c
+	$(COMPILE.c) -g -I../../../openjdk9/build/macosx-x86_64-normal-server-release/hotspot/dist/include -I../../../openjdk9/build/macosx-x86_64-normal-server-release/hotspot/dist/include/bsd -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/agent.o agent.c
 
 # Subprojects
 .build-subprojects:

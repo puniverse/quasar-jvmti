@@ -37,8 +37,8 @@
       <compileType>
         <cTool>
           <incDir>
-            <pElem>/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/include</pElem>
-            <pElem>/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/include/darwin</pElem>
+            <pElem>../../../openjdk9/build/macosx-x86_64-normal-server-release/hotspot/dist/include</pElem>
+            <pElem>../../../openjdk9/build/macosx-x86_64-normal-server-release/hotspot/dist/include/bsd</pElem>
           </incDir>
         </cTool>
       </compileType>
