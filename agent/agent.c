@@ -148,7 +148,7 @@ static void JNICALL Exception(jvmtiEnv *jvmti, JNIEnv* jni, jthread thread, jmet
                 err = (*jvmti)->GetOperandFloat(jvmti, thread, k, 4, &f);
                 CHECK_JVMTI_ERROR(jvmti, err);
                 if (f != 1.0f) {
-                    printf("ERROR: float @ OpStack[3] of '%s' is '%f' != 1.0f\n", methodName, f);
+                    printf("ERROR: float @ OpStack[4] of '%s' is '%f' != 1.0f\n", methodName, f);
                     abort();
                 }
 
@@ -156,7 +156,7 @@ static void JNICALL Exception(jvmtiEnv *jvmti, JNIEnv* jni, jthread thread, jmet
                 err = (*jvmti)->GetOperandDouble(jvmti, thread, k, 5, &d);
                 CHECK_JVMTI_ERROR(jvmti, err);
                 if (d != 1.0) {
-                    printf("ERROR: float @ OpStack[3] of '%s' is '%lf' != 1.0d\n", methodName, d);
+                    printf("ERROR: float @ OpStack[5] of '%s' is '%lf' != 1.0d\n", methodName, d);
                     abort();
                 }
             }
