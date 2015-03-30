@@ -37,8 +37,8 @@
       <compileType>
         <cTool>
           <incDir>
-            <pElem>../../../openjdk9/build/macosx-x86_64-normal-server-release/hotspot/dist/include</pElem>
-            <pElem>../../../openjdk9/build/macosx-x86_64-normal-server-release/hotspot/dist/include/bsd</pElem>
+            <pElem>../../../../openjdk9/build/macosx-x86_64-normal-server-release/hotspot/dist/include</pElem>
+            <pElem>../../../../openjdk9/build/macosx-x86_64-normal-server-release/hotspot/dist/include/bsd</pElem>
           </incDir>
         </cTool>
       </compileType>

@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=CLang-MacOSX
 CND_ARTIFACT_DIR_Debug=dist/Debug/CLang-MacOSX
-CND_ARTIFACT_NAME_Debug=libJVMTI_1.dylib
-CND_ARTIFACT_PATH_Debug=dist/Debug/CLang-MacOSX/libJVMTI_1.dylib
+CND_ARTIFACT_NAME_Debug=libagent.dylib
+CND_ARTIFACT_PATH_Debug=dist/Debug/CLang-MacOSX/libagent.dylib
 CND_PACKAGE_DIR_Debug=dist/Debug/CLang-MacOSX/package
-CND_PACKAGE_NAME_Debug=libJVMTI1.dylib.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/CLang-MacOSX/package/libJVMTI1.dylib.tar
+CND_PACKAGE_NAME_Debug=libagent.dylib.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/CLang-MacOSX/package/libagent.dylib.tar
 # Release configuration
 CND_PLATFORM_Release=CLang-MacOSX
 CND_ARTIFACT_DIR_Release=dist/Release/CLang-MacOSX
-CND_ARTIFACT_NAME_Release=libJVMTI_1.dylib
-CND_ARTIFACT_PATH_Release=dist/Release/CLang-MacOSX/libJVMTI_1.dylib
+CND_ARTIFACT_NAME_Release=libagent.dylib
+CND_ARTIFACT_PATH_Release=dist/Release/CLang-MacOSX/libagent.dylib
 CND_PACKAGE_DIR_Release=dist/Release/CLang-MacOSX/package
-CND_PACKAGE_NAME_Release=libJVMTI1.dylib.tar
-CND_PACKAGE_PATH_Release=dist/Release/CLang-MacOSX/package/libJVMTI1.dylib.tar
+CND_PACKAGE_NAME_Release=libagent.dylib.tar
+CND_PACKAGE_PATH_Release=dist/Release/CLang-MacOSX/package/libagent.dylib.tar
 #
 # include compiler specific variables
 #
