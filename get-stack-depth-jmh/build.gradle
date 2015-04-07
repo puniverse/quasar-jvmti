@@ -1,0 +1,62 @@
+plugins {
+   id 'me.champeau.gradle.jmh' version '0.2.0'
+}
+
+apply plugin: 'c'
+apply plugin: 'me.champeau.gradle.jmh'
+
+ext.javaHome = '/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home'
+ext.javaIncludePlatform = 'darwin'
+ext.dllPath = "$buildDir/binaries/getStackDepthSharedLibrary"
+ext.dllPathName = "$dllPath/libgetStackDepth.dylib"
+
+repositories {
+//    mavenLocal()
+    mavenCentral()
+}
+
+jmh {
+    jmhVersion = '1.7.1'
+    jvmArgs = "-agentpath:$dllPathName -Djava.library.path=$dllPath"
+}
+
+model {
+    toolChains {
+        gcc(Gcc) {
+            eachPlatform {
+                cCompiler.withArguments { args ->
+                    args << "-I$javaHome/include"
+                    args << "-I$javaHome/include/$javaIncludePlatform"
+                }
+                linker.withArguments { args ->
+                    args << "-L${javaHome}/jre/lib/server"
+                    args << "-ljvm"
+                }
+            }
+        }
+        clang(Clang) {
+            eachPlatform {
+                cCompiler.withArguments { args ->
+                    args << "-I$javaHome/include"
+                    args << "-I$javaHome/include/$javaIncludePlatform"
+                }
+                linker.withArguments { args ->
+                    args << "-L${javaHome}/jre/lib/server"
+                    args << "-ljvm"
+                }
+            }
+        }
+    }
+    components {
+        getStackDepth(NativeLibrarySpec)
+    }
+    buildTypes {
+        release
+    }
+}
+
+jmhClasses.dependsOn 'getStackDepthSharedLibrary'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
