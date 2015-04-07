@@ -1,7 +1,8 @@
 .DS_Store
-/java/nbproject/private/
-/agent/dist/
-/agent/build/
-/agent/nbproject/private/
-/java/dist/
-/java/build/
+/**/nbproject/private
+/**/build/
+/**/dist/
+/**/.nb-gradle/
+/**/.gradle/
+/**/gradle/wrapper/
+/**/*.log
