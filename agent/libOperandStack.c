@@ -1,1 +1,1 @@
-../jtreg-test/libOperandStack.c
+../openjdk9-dev_additions/jdk/test/native_sanity/jvmtigetoperandstack/libOperandStack.c

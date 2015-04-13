@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/agent.o
+	${OBJECTDIR}/libOperandStack.o
 
 
 # C Compiler Flags
@@ -62,10 +62,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libagent.${CND_DLIB_EXT}: ${OBJECTFIL
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libagent.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -dynamiclib -install_name libagent.${CND_DLIB_EXT} -fPIC
 
-${OBJECTDIR}/agent.o: agent.c 
+${OBJECTDIR}/libOperandStack.o: libOperandStack.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -I../../../../openjdk9/build/macosx-x86_64-normal-server-release/hotspot/dist/include -I../../../../openjdk9/build/macosx-x86_64-normal-server-release/hotspot/dist/include/bsd -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/agent.o agent.c
+	$(COMPILE.c) -g -I../../../../openjdk9/build/macosx-x86_64-normal-server-release/hotspot/dist/include -I../../../../openjdk9/build/macosx-x86_64-normal-server-release/hotspot/dist/include/bsd -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/libOperandStack.o libOperandStack.c
 
 # Subprojects
 .build-subprojects:

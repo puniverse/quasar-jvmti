@@ -1,8 +1,3 @@
- /*
- * @test
- * @run main/native OperandStack
- */
-
 public class OperandStack {
     public static class E extends Exception {}
 

@@ -12,7 +12,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>agent.c</itemPath>
+      <itemPath>libOperandStack.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -42,7 +42,7 @@
           </incDir>
         </cTool>
       </compileType>
-      <item path="agent.c" ex="false" tool="0" flavor2="0">
+      <item path="libOperandStack.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="2">
@@ -65,7 +65,7 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="agent.c" ex="false" tool="0" flavor2="0">
+      <item path="libOperandStack.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
   </confs>

@@ -1,1 +1,1 @@
-../../jtreg-test/OperandStack.java
+../../openjdk9-dev_additions/jdk/test/native_sanity/jvmtigetoperandstack/OperandStack.java
