@@ -1,4 +1,9 @@
-public class OperandStackApp {
+ /*
+ * @test
+ * @run main/native OperandStack
+ */
+
+public class OperandStack {
     public static class E extends Exception {}
 
     public static E e = new E();

@@ -140,7 +140,7 @@ static void JNICALL Exception(jvmtiEnv *jvmti, JNIEnv* jni, jthread thread, jmet
                 err = (*jvmti)->GetOperandLong(jvmti, thread, k, 2, &l);
                 CHECK_JVMTI_ERROR(jvmti, err);
                 if (l != 1l) {
-                    printf("ERROR: long @ OpStack[2] of '%s' is '%ld' != 1l\n", methodName, l);
+                    printf("ERROR: long @ OpStack[2] of '%s' is '%ld' != 1l\n", methodName, (long) l);
                     abort();
                 }
 
@@ -248,5 +248,5 @@ static void getClassName(JNIEnv* jni, jobject obj, jstring* str, char** name) {
     *str = (jstring)(*jni)->CallObjectMethod(jni, clsObj, mid);
 
     // Now get the c string from the java jstring object
-    *name = (*jni)->GetStringUTFChars(jni, *str, NULL);
+    *name = (char *) (*jni)->GetStringUTFChars(jni, *str, NULL);
 }
